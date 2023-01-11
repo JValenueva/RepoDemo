@@ -98,3 +98,6 @@ def satisfaction():
                     print('Type (yes/no)')
         else:
             print('Please select a day trip aspect that you would like to change.')
+
+satisfactory_question = satisfaction()
+print(satisfactory_question)
