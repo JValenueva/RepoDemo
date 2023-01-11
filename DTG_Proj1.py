@@ -33,3 +33,68 @@ def master_function():
     print(f'Transport: {result_2}')
     print(f'Entertainment: {result_3}')
 master_function()
+
+def satisfaction():
+    satisfied = input('Are all these aspects of the day trip satisfactory? (yes/no): ')
+    if satisfied == 'yes':
+        print('Random day trip complete.')
+    elif satisfied == 'no':
+        choice = input('Which aspect or the day trip were you dissatisfied with?: ')
+        if choice == 'destination' or 'Destination':
+            user_picked = False
+            while user_picked == False:
+                new_destination = demop1(destination_list)
+                print(f'New destination selected: {new_destination}')
+                confirmation = input(f'Are you satisfied with {new_destination} as your new destination?(yes/no): ')
+                if confirmation == 'yes':
+                    print(master_function())
+                    satisfactory_question = satisfaction()
+                    print(satisfactory_question)
+                elif confirmation == 'no':
+                    print('Reselecting destination')
+                else:
+                    print('Type (yes/no)')
+        elif choice == 'restaurant' or 'Restaurant':
+            user_picked_1 = False
+            while user_picked_1 == False:
+                new_restaurant = demop2(restaurants_list)
+                print(f'New restaurant selected: {new_restaurant}')
+                confirmation_1 = input(f'Are you satisfied with {new_restaurant} as your new restaurant?(yes/no): ')
+                if confirmation_1 == 'yes':
+                    print(master_function())
+                    satisfactory_question = satisfaction()
+                    print(satisfactory_question)
+                elif confirmation_1 == 'no':
+                    print('Reselecting restaurant')
+                else:
+                    print('Type (yes/no)')
+        elif choice == 'transport' or 'Transport':
+            user_picked_2 = False
+            while user_picked_2 == False:
+                new_transport = demop3(transport_means_list)
+                print(f'New means of transport selected: {new_transport}')
+                confirmation_2 = input(f'Are you satisfied with {new_transport} as your new means of transport?(yes/no): ')
+                if confirmation_2 == 'yes':
+                    print(master_function())
+                    satisfactory_question = satisfaction()
+                    print(satisfactory_question)
+                elif confirmation_2 == 'no':
+                    print('Reselecting means of transport')
+                else:
+                    print('Type (yes/no)')
+        elif choice == 'entertainment' or 'Entertainment':
+            user_picked_3 = False
+            while user_picked_3 == False:
+                new_entertainment = demop4(entertainment_list)
+                print(f'New entertainment selected: {new_destination}')
+                confirmation_3 = input(f'Are you satisfied with {new_entertainment} as your new form of entertainment?(yes/no): ')
+                if confirmation_3 == 'yes':
+                    print(master_function())
+                    satisfactory_question = satisfaction()
+                    print(satisfactory_question)
+                elif confirmation_3 == 'no':
+                    print('Reselecting new form of entertainment')
+                else:
+                    print('Type (yes/no)')
+        else:
+            print('Please select a day trip aspect that you would like to change.')
